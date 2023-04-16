@@ -143,8 +143,8 @@ class QurabTab extends StatelessWidget {
             separatorBuilder: (context, index) => Divider(
               color: Theme.of(context).primaryColor,
               thickness: 1,
-              endIndent: 35,
-              indent: 35,
+              endIndent: 40,
+              indent: 40,
             ),
             itemBuilder: (context, index) {
               return InkWell(
