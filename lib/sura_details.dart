@@ -69,7 +69,9 @@ class _SuraDetailsState extends State<SuraDetails> {
     String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
     List<String> lines = sura.split("\n");
     print(lines);
-    verses = lines;
-    setState(() {});
+
+    setState(() {
+      verses = lines;
+    });
   }
 }
