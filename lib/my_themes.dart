@@ -8,7 +8,7 @@ class MyThemeData {
       primaryColor: lightColor,
       textTheme: TextTheme(
           bodySmall: GoogleFonts.elMessiri(
-              fontSize: 20, fontWeight: FontWeight.bold, color: lightColor),
+              fontSize: 18, fontWeight: FontWeight.bold, color: lightColor),
           bodyMedium: GoogleFonts.elMessiri(
               fontSize: 25, fontWeight: FontWeight.bold, color: lightColor),
           bodyLarge: GoogleFonts.elMessiri(
