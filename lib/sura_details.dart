@@ -19,7 +19,6 @@ class _SuraDetailsState extends State<SuraDetails> {
     if (verses.isEmpty) {
       loadFile(args.index);
     }
-
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
