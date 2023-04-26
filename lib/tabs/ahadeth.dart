@@ -40,8 +40,8 @@ class _AhadethTabState extends State<AhadethTab> {
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
                         .textTheme
-                        .bodySmall!
-                        .copyWith(color: Colors.black),
+                        .bodyMedium!
+                        .copyWith(fontSize: 18),
                   ),
                 );
               },

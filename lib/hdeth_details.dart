@@ -11,7 +11,7 @@ class HadethDetails extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                "assets/images/main_bg.png",
+                "assets/images/dark_bg.png",
               ),
               fit: BoxFit.fill),
         ),

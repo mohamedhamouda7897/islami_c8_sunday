@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           width: double.infinity,
           child: Image.asset(
-            "assets/images/main_bg.png",
+            "assets/images/dark_bg.png",
             fit: BoxFit.fill,
           ),
         ),
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/quran.png")),
                 label: "Quran",
-                backgroundColor: Theme.of(context).primaryColor,
+                backgroundColor: Theme.of(context).colorScheme.primary,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/sebha.png")),

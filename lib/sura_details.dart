@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_c8_sunday/sura_details_args.dart';
 
 class SuraDetails extends StatefulWidget {
@@ -23,7 +22,7 @@ class _SuraDetailsState extends State<SuraDetails> {
       decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage(
-              "assets/images/main_bg.png",
+              "assets/images/dark_bg.png",
             ),
             fit: BoxFit.fill),
       ),
@@ -51,9 +50,8 @@ class _SuraDetailsState extends State<SuraDetails> {
                     textDirection: TextDirection.rtl,
                     child: Center(
                         child: Text(
-                      "${verses[index]}",
-                      style: GoogleFonts.elMessiri(
-                          fontSize: 20, color: Color(0xFF242424)),
+                          "${verses[index]}",
+                      style: Theme.of(context).textTheme.bodyMedium,
                       textAlign: TextAlign.center,
                     )),
                   );

@@ -155,10 +155,9 @@ class QurabTab extends StatelessWidget {
                 child: Center(
                   child: Text(
                     suraNames[index],
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall!
-                        .copyWith(color: Colors.black),
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 18,
+                        ),
                   ),
                 ),
               );
