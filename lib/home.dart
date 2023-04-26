@@ -3,6 +3,7 @@ import 'package:islami_c8_sunday/tabs/ahadeth.dart';
 import 'package:islami_c8_sunday/tabs/quran.dart';
 import 'package:islami_c8_sunday/tabs/radio.dart';
 import 'package:islami_c8_sunday/tabs/sebha.dart';
+import 'package:islami_c8_sunday/tabs/settings.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home";
@@ -13,7 +14,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
-  List<Widget> tabs = [QurabTab(), SebhaTab(), AhadethTab(), RadioTab()];
+  List<Widget> tabs = [
+    QurabTab(),
+    SebhaTab(),
+    AhadethTab(),
+    RadioTab(),
+    SettingsTab()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   AssetImage("assets/images/radio.png"),
                 ),
                 label: "Radio",
+                backgroundColor: Theme.of(context).primaryColor,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: "Seetings",
                 backgroundColor: Theme.of(context).primaryColor,
               ),
             ],
