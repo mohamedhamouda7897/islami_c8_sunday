@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_c8_sunday/providers/my_provider.dart';
 import 'package:islami_c8_sunday/sura_details.dart';
 import 'package:islami_c8_sunday/sura_details_args.dart';
+import 'package:provider/provider.dart';
 
 class QurabTab extends StatelessWidget {
   List<String> suraNames = [
@@ -122,20 +125,25 @@ class QurabTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset("assets/images/quran_bg.png"),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: pro.themeMode == ThemeMode.light
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).colorScheme.secondary,
           thickness: 3,
         ),
         Text(
-          "Sura Name",
+          AppLocalizations.of(context)!.suraNames,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: pro.themeMode == ThemeMode.light
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).colorScheme.secondary,
           thickness: 3,
         ),
         Expanded(
@@ -156,8 +164,8 @@ class QurabTab extends StatelessWidget {
                   child: Text(
                     suraNames[index],
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontSize: 18,
-                        ),
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               );

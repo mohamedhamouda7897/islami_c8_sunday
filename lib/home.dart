@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_c8_sunday/tabs/ahadeth.dart';
 import 'package:islami_c8_sunday/tabs/quran.dart';
 import 'package:islami_c8_sunday/tabs/radio.dart';
@@ -16,10 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
   List<Widget> tabs = [
     QurabTab(),
-    SebhaTab(),
+    const SebhaTab(),
     AhadethTab(),
-    RadioTab(),
-    SettingsTab()
+    const RadioTab(),
+    const SettingsTab()
   ];
 
   @override
@@ -29,13 +30,16 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           width: double.infinity,
           child: Image.asset(
-            "assets/images/dark_bg.png",
+            Theme.of(context).colorScheme.brightness == Brightness.dark
+                ? "assets/images/dark_bg.png"
+                : "assets/images/main_bg.png",
             fit: BoxFit.fill,
           ),
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Islami", style: Theme.of(context).textTheme.bodyLarge),
+            title: Text(AppLocalizations.of(context)!.appTitle,
+                style: Theme.of(context).textTheme.bodyLarge),
           ),
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Theme.of(context).primaryColor,
@@ -46,29 +50,29 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: [
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/quran.png")),
-                label: "Quran",
+                icon: const ImageIcon(AssetImage("assets/images/quran.png")),
+                label: AppLocalizations.of(context)!.quran,
                 backgroundColor: Theme.of(context).colorScheme.primary,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/sebha.png")),
-                label: "Sebha",
+                icon: const ImageIcon(AssetImage("assets/images/sebha.png")),
+                label: AppLocalizations.of(context)!.sebha,
                 backgroundColor: Theme.of(context).primaryColor,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),
-                label: "Ahadeth",
+                icon: const ImageIcon(AssetImage("assets/images/ahadeth.png")),
+                label: AppLocalizations.of(context)!.ahadeth,
                 backgroundColor: Theme.of(context).primaryColor,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(
+                icon: const ImageIcon(
                   AssetImage("assets/images/radio.png"),
                 ),
-                label: "Radio",
+                label: AppLocalizations.of(context)!.radio,
                 backgroundColor: Theme.of(context).primaryColor,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
                 label: "Seetings",
                 backgroundColor: Theme.of(context).primaryColor,
               ),
