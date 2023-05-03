@@ -19,13 +19,20 @@ class _SebhaTabState extends State<SebhaTab> {
             flex: 3,
           ),
           Image.asset(
-            'assets/images/sebha_bg.png',
+            Theme.of(context).colorScheme.brightness == Brightness.light
+                ? 'assets/images/sebha_bg.png'
+                : 'assets/images/sebha_bg_dark.png',
             scale: 1.2,
           ),
           const Spacer(
             flex: 2,
           ),
-          Text('عدد التسبيحات', style: Theme.of(context).textTheme.bodySmall),
+          Text('عدد التسبيحات',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.brightness ==
+                          Brightness.light
+                      ? Colors.black
+                      : Colors.white)),
           const Spacer(
             flex: 3,
           ),
@@ -36,27 +43,36 @@ class _SebhaTabState extends State<SebhaTab> {
             },
             style: ButtonStyle(
                 backgroundColor:
-                MaterialStatePropertyAll(Theme.of(context).primaryColor),
+                    MaterialStatePropertyAll(Theme.of(context).primaryColor),
                 fixedSize: const MaterialStatePropertyAll(Size(69, 81)),
                 shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)))),
             child: Text(
               '$totalCounter',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall
-                  ?.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.brightness ==
+                            Brightness.light
+                        ? Colors.black
+                        : Theme.of(context).colorScheme.secondary,
+                  ),
             ),
           ),
           Container(
             decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
+                color:
+                    Theme.of(context).colorScheme.brightness == Brightness.light
+                        ? Theme.of(context).primaryColor
+                        : Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.circular(20)),
             margin: const EdgeInsets.all(12),
             padding: const EdgeInsets.all(8.0),
             child: Text(
               tasbeeh,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.brightness ==
+                          Brightness.light
+                      ? Colors.black
+                      : Colors.white),
             ),
           ),
           const Spacer(
