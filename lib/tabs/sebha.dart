@@ -19,7 +19,7 @@ class _SebhaTabState extends State<SebhaTab> {
             flex: 3,
           ),
           Image.asset(
-            'assets/images/sebha_pho.png',
+            'assets/images/sebha_bg.png',
             scale: 1.2,
           ),
           const Spacer(
