@@ -70,7 +70,7 @@ class _SebhaTabState extends State<SebhaTab> {
               tasbeeh,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).colorScheme.brightness ==
-                          Brightness.light
+                          Brightness.dark
                       ? Colors.black
                       : Colors.white),
             ),
